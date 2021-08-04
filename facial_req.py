@@ -13,18 +13,17 @@ import cv2
 currentname = "unknown"
 #Determine faces from encodings.pickle file model created from train_model.py
 encodingsP = "encodings.pickle"
-#use this xml file
-cascade = "haarcascade_frontalface_default.xml"
 
 # load the known faces and embeddings along with OpenCV's Haar
 # cascade for face detection
 print("[INFO] loading encodings + face detector...")
 data = pickle.loads(open(encodingsP, "rb").read())
-detector = cv2.CascadeClassifier(cascade)
 
 # initialize the video stream and allow the camera sensor to warm up
-print("[INFO] starting video stream...")
-vs = VideoStream(src=0).start()
+# Set the ser to the followng
+# src = 0 : for the build in single web cam, could be your laptop webcam
+# src = 2 : I had to set it to 2 inorder to use the USB webcam attached to my laptop
+vs = VideoStream(src=2,framerate=10).start()
 #vs = VideoStream(usePiCamera=True).start()
 time.sleep(2.0)
 
@@ -37,24 +36,10 @@ while True:
 	# to 500px (to speedup processing)
 	frame = vs.read()
 	frame = imutils.resize(frame, width=500)
-	
-	# convert the input frame from (1) BGR to grayscale (for face
-	# detection) and (2) from BGR to RGB (for face recognition)
-	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-	rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
-	# detect faces in the grayscale frame
-	rects = detector.detectMultiScale(gray, scaleFactor=1.1, 
-		minNeighbors=5, minSize=(30, 30),
-		flags=cv2.CASCADE_SCALE_IMAGE)
-
-	# OpenCV returns bounding box coordinates in (x, y, w, h) order
-	# but we need them in (top, right, bottom, left) order, so we
-	# need to do a bit of reordering
-	boxes = [(y, x + w, y + h, x) for (x, y, w, h) in rects]
-
+	# Detect the fce boxes
+	boxes = face_recognition.face_locations(frame)
 	# compute the facial embeddings for each face bounding box
-	encodings = face_recognition.face_encodings(rgb, boxes)
+	encodings = face_recognition.face_encodings(frame, boxes)
 	names = []
 
 	# loop over the facial embeddings
@@ -83,12 +68,12 @@ while True:
 			# of votes (note: in the event of an unlikely tie Python
 			# will select first entry in the dictionary)
 			name = max(counts, key=counts.get)
-			
+
 			#If someone in your dataset is identified, print their name on the screen
 			if currentname != name:
 				currentname = name
 				print(currentname)
-		
+
 		# update the list of names
 		names.append(name)
 
