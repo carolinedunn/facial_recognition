@@ -1,6 +1,7 @@
 import cv2
+import os
 
-name = 'Caroline' #replace with your name
+name = 'caleb' #replace with your name
 
 cam = cv2.VideoCapture(0)
 
@@ -8,6 +9,8 @@ cv2.namedWindow("press space to take a photo", cv2.WINDOW_NORMAL)
 cv2.resizeWindow("press space to take a photo", 500, 300)
 
 img_counter = 0
+
+os.makedirs("dataset/"+ name, exist_ok=True)
 
 while True:
     ret, frame = cam.read()
