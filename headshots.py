@@ -10,6 +10,7 @@ cv2.resizeWindow("press space to take a photo", 500, 300)
 
 img_counter = 0
 
+os.makedirs("dataset", exist_ok=True)
 os.makedirs("dataset/"+ name, exist_ok=True)
 
 while True:
