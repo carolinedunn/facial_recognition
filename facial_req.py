@@ -42,7 +42,7 @@ fps = FPS().start()
 while True:
 	if GPIO.input(PIR_PIN) or time.time() < lastMotion + 15:
 		# if motion input, start timer again.
-		if GPIO.input(PIR_PIN)
+		if GPIO.input(PIR_PIN):
 			lastMotion = time.time();
 		# grab the frame from the threaded video stream and resize it
 		# to 500px (to speedup processing)
