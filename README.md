@@ -146,10 +146,16 @@ PERSON_NAME = "YOUR_NAME"
 
 Save and exit by pressing `Ctrl+X`, then `Y`, and hit `Enter`.
 
-Now run the script:
+Now run the script for the webcam:
 
 ```bash
 python3 headshots_capture-webcam.py
+```
+
+Here's the command if using a Pi Camera:
+
+```bash
+python3 headshots_capture-picam.py
 ```
 
 Look at the camera and press the **spacebar** to take photos. Move your head around and take at least 10 photos.
