@@ -102,7 +102,7 @@ while True:
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
     
     # Display everything over the video feed.
-    cv2.imshow('Video', display_frame)
+    cv2.imshow('Face Rec Running', display_frame)
     
     # Break the loop and stop the script if 'q' is pressed
     if cv2.waitKey(1) == ord("q"):
