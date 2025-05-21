@@ -10,7 +10,7 @@ Materials: Raspberry Pi 4 or 5 and Webcam
 
 This project walks you through setting up facial recognition on a Raspberry Pi using a virtual environment, OpenCV, and the `face-recognition` library. With the release of Bookworm OS, virtual environments are now required to avoid conflicts with system packages — but don’t worry, it’s quick and easy!
 
-### 📦 Set Up Virtual Environment and Install Libraries
+### Set Up Virtual Environment and Install Libraries
 
 Open a terminal window and follow these steps:
 
@@ -28,7 +28,34 @@ Update your Raspberry Pi:
 sudo apt update && sudo apt full-upgrade -y
 ```
 
-Install required Python libraries:
+### Add Swap Memory (Recommended First Step)
+
+The Raspberry Pi doesn’t have enough memory to compile dlib. Add swap space to avoid memory crashes during compilation:
+
+```bash
+# Open the dphys-swapfile config
+sudo nano /etc/dphys-swapfile
+```
+
+Find the line:
+
+```ini
+CONF_SWAPSIZE=512
+```
+
+Change it to:
+
+```ini
+CONF_SWAPSIZE=2048
+```
+
+Save and exit (`CTRL+X`, then `Y`, then `Enter`), then restart the swap service:
+
+```bash
+sudo systemctl restart dphys-swapfile
+```
+
+### Install Required Python Libraries
 
 ```bash
 pip install opencv-python
@@ -42,13 +69,34 @@ Install CMake (for compiling dependencies):
 sudo apt install cmake -y
 ```
 
-> 💡 If you ever exit the terminal, simply re-run `source face_rec/bin/activate` to reactivate your environment.
+> Once you're done with installation, it's a good idea to **change the swap size back to reduce SD card wear**:
 
-### 🧪 Configure Thonny to Use Virtual Environment
+```bash
+sudo nano /etc/dphys-swapfile
+```
 
-Open Thonny and set the interpreter to point to the `face_rec/bin/python3` inside your virtual environment so your code runs with the correct libraries.
+Change:
 
-### 📥 Download the Code
+```ini
+CONF_SWAPSIZE=2048
+```
+Back to:
+
+```ini
+CONF_SWAPSIZE=512
+```
+
+Then restart the service:
+
+```bash
+sudo systemctl restart dphys-swapfile
+```
+
+> If you ever exit the terminal, simply re-run `source face_rec/bin/activate` to reactivate your environment.
+
+
+
+### Download the Code
 
 Clone this repository:
 
