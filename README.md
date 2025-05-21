@@ -1,4 +1,4 @@
-# Facial Recognition on Raspberry Pi (2023+ Bookworm OS)
+# Facial Recognition on Raspberry Pi 2025
 
 
 <img src="https://github.com/carolinedunn/facial_recognition/blob/main/photo/screenshot.png?raw=true" width="500"/>
