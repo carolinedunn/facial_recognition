@@ -1,7 +1,7 @@
 # Facial Recognition on Raspberry Pi 2025
 
 
-<img src="https://github.com/carolinedunn/facial_recognition/blob/main/photo/screenshot.png?raw=true" width="500"/>
+<img src="https://github.com/carolinedunn/facial_recognition/blob/main/photo/CandP.png?raw=true" width="500"/>
 
 
 Materials: Raspberry Pi 4 or 5 and Webcam
