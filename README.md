@@ -121,7 +121,7 @@ cd facial_recognition
 Delete the sample directory:
 
 ```bash
-rm -r /dataset/Name
+rm -r dataset/Z
 ```
 
 ## Take Headshots
