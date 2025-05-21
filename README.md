@@ -14,11 +14,13 @@ This project walks you through setting up facial recognition on a Raspberry Pi u
 
 Open a terminal window and follow these steps:
 
+Create a virtual environment
 ```bash
-# Create a virtual environment
 python3 -m venv --system-site-packages face_rec
+```
 
-# Activate the virtual environment
+Activate the virtual environment
+```bash
 source face_rec/bin/activate
 ```
 
@@ -32,8 +34,8 @@ sudo apt update && sudo apt full-upgrade -y
 
 The Raspberry Pi doesn’t have enough memory to compile dlib. Add swap space to avoid memory crashes during compilation:
 
+Open the dphys-swapfile config
 ```bash
-# Open the dphys-swapfile config
 sudo nano /etc/dphys-swapfile
 ```
 
@@ -59,14 +61,21 @@ sudo systemctl restart dphys-swapfile
 
 ```bash
 pip install opencv-python
-pip install imutils
-pip install face-recognition
 ```
 
+```bash
+pip install imutils
+```
 Install CMake (for compiling dependencies):
 
 ```bash
 sudo apt install cmake -y
+```
+
+Installing face recognition will take anywhere from 10 minutes to an hour.
+
+```bash
+pip install face-recognition
 ```
 
 > Once you're done with installation, it's a good idea to **change the swap size back to reduce SD card wear**:
