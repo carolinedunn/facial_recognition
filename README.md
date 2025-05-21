@@ -103,7 +103,75 @@ Clone this repository:
 ```bash
 git clone https://github.com/carolinedunn/facial_recognition.git
 ```
+Change into the directory:
 
+```bash
+cd facial_recognition
+```
+
+Delete the sample directory:
+
+```bash
+rm -r /dataset/Name
+```
+
+## Take Headshots
+
+If using a webcam, first modify the code with the person’s name in the dataset directory:
+
+```bash
+nano headshots_capture-webcam.py
+```
+
+If using a Pi Camera:
+
+```bash
+nano headshots_capture-picam.py
+```
+
+Change line 7 of the file replacing YOUR_NAME:
+
+```python
+PERSON_NAME = "YOUR_NAME"
+```
+
+Save and exit by pressing `Ctrl+X`, then `Y`, and hit `Enter`.
+
+Now run the script:
+
+```bash
+python3 headshots_capture-webcam.py
+```
+
+Look at the camera and press the **spacebar** to take photos. Move your head around and take at least 10 photos.
+
+Press `q` to exit. Repeat this for each person.
+
+You should now see a folder for each person with a set of headshots.
+
+## Train the Model
+
+```bash
+python3 model_training.py
+```
+
+If successful, you will get a `.pickle` file.
+
+## Run the Facial Recognition Test
+
+If using a webcam:
+
+```bash
+python3 face_rec-webcam.py
+```
+
+If using a Pi Camera:
+
+```bash
+python3 face_rec-picam.py
+```
+
+Press `q` to exit.
 Original Tutorial - https://www.tomshardware.com/how-to/raspberry-pi-facial-recognition
 
 
