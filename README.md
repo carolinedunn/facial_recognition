@@ -186,7 +186,7 @@ If using a Pi Camera:
 python3 face_rec-picam.py
 ```
 
-Press `q` to exit.  \
+Press `q` to exit. 
 
 
 Original Tutorial - https://www.tomshardware.com/how-to/raspberry-pi-facial-recognition  \
