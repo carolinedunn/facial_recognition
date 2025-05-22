@@ -186,8 +186,8 @@ If using a Pi Camera:
 python3 face_rec-picam.py
 ```
 
-Press `q` to exit.
-Original Tutorial - https://www.tomshardware.com/how-to/raspberry-pi-facial-recognition
+Press `q` to exit.  \
 
 
-2025 Updated Tutorial from Core Electronics (this code has been expanded to include webcams) - https://core-electronics.com.au/guides/face-recognition-with-raspberry-pi-and-opencv/
+Original Tutorial - https://www.tomshardware.com/how-to/raspberry-pi-facial-recognition  \
+Updated Code from Core Electronics - https://core-electronics.com.au/guides/face-recognition-with-raspberry-pi-and-opencv/
