@@ -1,6 +1,5 @@
 # Facial Recognition on Raspberry Pi 2025
 
-
 <img src="https://github.com/carolinedunn/facial_recognition/blob/main/photo/CandP.png?raw=true" width="500"/>
 
 
@@ -9,6 +8,8 @@ Materials: Raspberry Pi 4 or 5 and Webcam
 <img src="https://github.com/carolinedunn/facial_recognition/blob/main/photo/RPi5+webcam.jpg?raw=true" width="500"/>
 
 This project walks you through setting up facial recognition on a Raspberry Pi using a virtual environment, OpenCV, and the `face-recognition` library. With the release of Bookworm OS, virtual environments are now required to avoid conflicts with system packages — but don’t worry, it’s quick and easy!
+
+## [Watch the Tutorial on YouTube - Face Rec on RPi](https://youtu.be/XNSSbSJ4lB4)
 
 ### Set Up Virtual Environment and Install Libraries
 
