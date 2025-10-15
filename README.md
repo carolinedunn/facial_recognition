@@ -192,3 +192,11 @@ Press `q` to exit.
 
 Original Tutorial - https://www.tomshardware.com/how-to/raspberry-pi-facial-recognition  \
 Updated Code from Core Electronics - https://core-electronics.com.au/guides/face-recognition-with-raspberry-pi-and-opencv/
+
+---
+
+## 📚 Author
+Created by **Caroline Dunn**  
+- 🌐 [winningintech.com](https://winningintech.com/)  
+- 📺 [YouTube.com/Caroline](https://www.youtube.com/caroline)  
+- 📘 [A Woman’s Guide to Winning in Tech](https://amzn.to/3YxHVO7)  
